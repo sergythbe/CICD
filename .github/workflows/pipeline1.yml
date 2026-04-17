@@ -1,0 +1,14 @@
+# le nom de ma pipeline
+name: Pipeline 1
+
+# le trigger
+on: 
+    push:
+        branches: [main]
+
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Step 1
+              run: echo "Hello world"
