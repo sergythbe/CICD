@@ -3,8 +3,10 @@ name: Pipeline 1
 
 # le trigger
 on: 
-    push:
-        branches: [main]
+    # push:
+    #     branches: 
+    #         - main
+    workflow_dispatch:
 # ce que le pipeline va réaliser
 jobs:
     job1:
@@ -16,7 +18,8 @@ jobs:
         runs-on: windows-latest
 
         # oblige le job en cours à attendre le job entre crochet avant de s'éxécuter
-        needs: [job1]
+        needs: 
+            - job1
         steps:
             - name: My awesome step
               run: mkdir app
