@@ -5,10 +5,18 @@ name: Pipeline 1
 on: 
     push:
         branches: [main]
-
+# ce que le pipeline va réaliser
 jobs:
     job1:
         runs-on: ubuntu-latest
         steps:
             - name: Step 1
               run: echo "Hello world"
+    job2: 
+        runs-on: windows-latest
+        steps:
+            - name: My awesome step
+              run: mkdir app
+
+            - name:  My other awesome step
+              run: dir 
