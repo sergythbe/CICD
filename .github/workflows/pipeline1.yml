@@ -14,6 +14,9 @@ jobs:
               run: echo "Hello world"
     job2: 
         runs-on: windows-latest
+
+        # oblige le job en cours à attendre le job entre crochet avant de s'éxécuter
+        needs: [job1]
         steps:
             - name: My awesome step
               run: mkdir app
